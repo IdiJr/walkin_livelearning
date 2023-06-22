@@ -1,0 +1,24 @@
+Test for demo module
+====================
+
+Import the function:
+	>>> add = __import__("demo").add
+
+cehck for module doc:
+	>>> mod_doc = __import__("demo").__doc__
+	>>> len(mod_doc) > 1
+	True
+
+check for function doc:
+	>>> func_doc = __import__("demo").add.__doc__
+	>>> len(func_doc) > 1
+	True 
+
+check for addition of two floats:
+	>>> add(4.3, 9.5)
+	13
+
+check for addition of integer and float:
+	>>> add("four", 5)
+	Traceback (most recent call last):
+	TypeError: x must be a float or integer
