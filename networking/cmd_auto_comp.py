@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import cmd
 """ Adds the auto completion functionality to the program.
 when <tab> is pressed a completion is triggered, when there are
@@ -8,6 +9,8 @@ options.
 
 class HelloWorld(cmd.Cmd):
     """Simple command processor example"""
+    prompt = "Karibu$ "
+    intro = "Welcome to the gretn"
 
     FRIENDS = [ 'Emmanuel', 'Ellis', 'Cuticle', 'Adams', 'Ahmed', 'John', 'Alice', 'Bobby', 'Barbara' ]
 
@@ -36,9 +39,14 @@ class HelloWorld(cmd.Cmd):
             'Greet the named person',
             ]))
 
+    def do_exit(self, arg):
+        'Quits the console'
+        print('Thank you for using Karibu')
+        return True
+    
     def do_EOF(self, line):
         'Close the cmd window, and exit: when EOF or Ctrl-D is input'
-        print('Thank you for using cmd_greet')
+        print('Thank you for using Karibu')
         return True
 
 if __name__ == '__main__':
